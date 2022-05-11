@@ -14,7 +14,6 @@ const Input = ({name,label,type,value,errMsg,err,formInputs,setFormInputs,min,ma
             
             <label>{label}</label>
             <input name={name} type={type} value={value} min={min} max={max} step={step} style={{padding:0,}} onChange={(e)=>{setValue(e.target.value)}}/>
-            {type === "range" && <span>{value}</span> }
             {err && <div className='error' > *{errMsg} </div> }
 
         </div>

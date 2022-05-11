@@ -279,6 +279,14 @@ header .nav * {
   padding: 1rem;
 }
 
+.addMovie .input-section {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+
+   width: 100%;
+}
+
 .addMovie .input-section input{
   font-size: 2rem;
   
@@ -288,7 +296,12 @@ header .nav * {
 }
 
 .addMovie .input-section input[type=range]{
-    background-color: black;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: white;
+  border: none; 
+  outline: none;
+  transition: ease-in-out .3s;
 }
 
 .addMovie .input-section input[type=checkbox]{
