@@ -1,18 +1,25 @@
-import EditSection from './EditSection';
+import EditSection from "./EditSection";
 
-const Navbar = ({addMovieRef}) => {
+import { useNavigate } from "react-router-dom";
 
-    return (
-        <header>
-            
-            <div className="logo">
-                <h1>MyMovies</h1>
-            </div>
+const Navbar = ({ addMovieRef }) => {
+  const navigate = useNavigate();
 
-            <EditSection addMovieRef={addMovieRef} />
-        
-        </header>
-    );
-}
+  return (
+    <header>
+      <div className="logo">
+        <h1
+          onClick={() => {
+            navigate("/");
+          }}
+        >
+          MyMovies
+        </h1>
+      </div>
+
+      <EditSection addMovieRef={addMovieRef} />
+    </header>
+  );
+};
 
 export default Navbar;
