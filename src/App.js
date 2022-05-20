@@ -1,115 +1,42 @@
-import { useRef, useState } from "react";
-
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useRef, useState } from "react";
+import { movies } from "./util/Movies";
 
-import HeroSection from "./component/HeroSection.jsx";
-import AddMovie from "./component/Movies/AddMovie.jsx";
-import MovieInfo from "./pages/MoviePage.jsx";
-import Movies from "./component/Movies/Movies.jsx";
-import Navbar from "./component/Navbar.jsx";
-import Home from "./pages/Home.jsx";
+import Home from "./pages/home/Home";
+import NavBar from "./components/NavBar/NavBar";
+import Cursor from "./components/cursor/Cursor";
+import SearchResult from "./pages/SearchResult/SearchResult";
+import MoviePage from "./pages/moviePage/MoviePage";
+import AddMovie from "./components/addMovie/addMovie";
+
+import "./App.css";
 
 function App() {
-  const imgSrc =
-    "https://raw.githubusercontent.com/knazim667/Film-Review/master/images/uploads/slider3.jpg";
+  const [stateMovies, setMovies] = useState(movies);
 
-  const [movies, setMovies] = useState([
-    {
-      id: 0,
-      name: "Cool movie name part 1",
-      imgSrc: imgSrc,
-      about: {
-        desc: "real movie, very interesting, i know this is very useful information.",
-        director: "steven famous",
-        actors: ["ur mom", "some legendary actor"],
-        rating: 4.5,
-      },
-      isFav: true,
-    },
-    {
-      id: 1,
-      name: "Cool movie name part 2",
-      imgSrc: imgSrc,
-      about: {
-        desc: "real movie, very interesting, i know this is very useful information.",
-        director: "steven famous",
-        actors: ["ur mom", "some legendary actor"],
-        rating: 4.9,
-      },
-      isFav: true,
-    },
-    {
-      id: 2,
-      name: "Cool test name part 3",
-      imgSrc: imgSrc,
-      about: {
-        desc: "real movie, very interesting, am very creative,i know.",
-        director: "steven famous",
-        actors: ["ur mom", "some legendary actor"],
-        rating: 3.7,
-      },
-      isFav: false,
-    },
-    {
-      id: 3,
-      name: "Cool movie name part 4",
-      imgSrc: imgSrc,
-      about: {
-        desc: "real movie, very interesting, am very creative,i know.",
-        director: "steven famous",
-        actors: ["ur mom", "some legendary actor"],
-        rating: 2.3,
-      },
-      isFav: true,
-    },
-  ]);
-
-  //create new movie in collection.
-
-  const createMovie = (name, desc, director, actors, rating, isFav) => {
-    let movie = {
-      id: movies.length,
-      name: name,
-      imgSrc: imgSrc,
-      about: {
-        desc: desc,
-        director: director,
-        actors: actors,
-        rating: rating,
-      },
-      isFav: isFav,
-    };
-
-    setMovies([...movies, movie]);
-  };
-
-  const [searchInput, setSearchInput] = useState("");
-
-  const resultRef = useRef();
-  const addMovie = useRef();
+  let addMovieRef = useRef();
 
   return (
     <Router>
       <div className="container">
-        <Navbar addMovieRef={addMovie} />
+        <Cursor />
+
+        <NavBar addMovieRef={addMovieRef} />
 
         <Routes>
           <Route
             path="/"
-            element={
-              <Home
-                setSearchInput={setSearchInput}
-                searchInput={searchInput}
-                resultRef={resultRef}
-                movies={movies}
-                setMovies={setMovies}
-              />
-            }
+            element={<Home setMovies={setMovies} movies={stateMovies} />}
           />
-          <Route path="/movie:id" element={<MovieInfo movies={movies} />} />
+          <Route
+            path="/search/:search"
+            element={<SearchResult movies={movies} />}
+          />
+
+          <Route path="/movie/:id" element={<MoviePage movies={movies} />} />
         </Routes>
 
-        <AddMovie ref={addMovie} createMovie={createMovie} />
+        <AddMovie ref={addMovieRef} setMovies={setMovies} movies={movies} />
       </div>
     </Router>
   );

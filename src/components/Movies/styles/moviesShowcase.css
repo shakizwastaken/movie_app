@@ -1,14 +1,8 @@
-.movie-page {
+.movies-showcase {
   display: flex;
   justify-content: center;
   align-items: center;
-
   flex-direction: column;
-
-  height: 100%;
-
-  padding: 5vh;
-}
-
-.movie-page #movie-title {
+  flex-wrap: wrap;
+  width: 100%;
 }

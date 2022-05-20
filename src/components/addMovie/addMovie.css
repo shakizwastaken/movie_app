@@ -1,0 +1,96 @@
+.addMovie-section {
+  background-color: var(--accent-color);
+}
+
+.addMovie-topShape {
+  fill: white;
+}
+
+.addMovie-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.addMovie-container {
+  position: relative;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+
+  gap: 30%;
+
+  width: 80%;
+
+  color: white;
+}
+
+.addMovie-container > h1 {
+  text-align: center;
+}
+
+.addMovie-characters img {
+  position: relative;
+  z-index: 1;
+
+  -webkit-filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.289));
+  filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.289));
+
+  height: 720px;
+}
+
+.addMovie-backShape {
+  position: absolute;
+
+  z-index: 0;
+
+  top: 100px;
+
+  height: 550px;
+  width: 550px;
+
+  background-color: var(--white-color);
+
+  transform: rotate(-15deg);
+  border-radius: 59% 41% 41% 59% / 32% 28% 72% 68%;
+}
+
+.addMovie-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  gap: 24px;
+}
+
+.addMovie-form h1 {
+  font-size: 5rem;
+}
+
+.addMovie-form .btn {
+  font-weight: 800;
+  font-size: 2rem;
+  color: white;
+
+  align-self: center;
+
+  width: 100%;
+
+  border-radius: 10px;
+
+  transition: 0.3s ease-in-out;
+}
+
+.addMovie-form .btn:hover {
+  color: var(--accent-color);
+  background-color: white;
+}
+
+.form-inputs {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0px;
+  gap: 25px;
+}

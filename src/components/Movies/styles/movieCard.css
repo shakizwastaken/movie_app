@@ -1,0 +1,31 @@
+.movie-card {
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: space-between;
+  align-items: center;
+
+  border-radius: 10px;
+
+  transition: all 0.3s ease-out;
+
+  height: 630px;
+  width: 310px;
+}
+
+.movie-card:hover {
+  box-shadow: 0px 0px 50px #ff5f5f57;
+}
+
+.movie-card .movie-img-container {
+  width: 100%;
+}
+
+.movie-card .movie-img {
+  width: 100%;
+}
+
+.movie-card .movie-info {
+  padding: 15px;
+}

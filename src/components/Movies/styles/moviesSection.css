@@ -1,0 +1,29 @@
+.movies-section {
+  max-width: 1080px;
+  padding: 2.5rem;
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  gap: 50px;
+
+  text-align: center;
+}
+
+.movies-section > h1 {
+  animation: var(--comeUp);
+}
+
+.movies-section .movies {
+  max-width: 1080px;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
