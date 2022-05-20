@@ -1,0 +1,54 @@
+nav {
+  position: sticky;
+  top: 0px;
+  z-index: 2;
+
+  display: flex;
+  justify-content: center;
+
+  backdrop-filter: blur(10px);
+  background-color: var(--primary-color);
+
+  padding: 20px 30px;
+}
+
+nav .nav-container {
+  max-width: 1080px;
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav .nav-logo h1 {
+  font-size: 2.1rem;
+
+  color: white;
+
+  transition: all 0.3s ease-out;
+  animation: WireToBold 1.5s;
+}
+
+nav .nav-logo h1:hover {
+  transition: color 0.3s ease-out;
+
+  -webkit-text-stroke: 0.8px white;
+  color: transparent;
+}
+
+nav .nav-links {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 30px;
+}
+
+nav .btn {
+  font-weight: 700;
+  color: white;
+}
+
+nav .btn:hover {
+  color: lightcoral;
+}

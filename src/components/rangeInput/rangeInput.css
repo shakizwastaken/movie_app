@@ -1,0 +1,17 @@
+.range-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 20px;
+
+  background-color: white;
+  color: rgb(78, 78, 78);
+
+  border-radius: 5px;
+}
+
+.range-input-value {
+  width: 20px;
+  text-align: center;
+}

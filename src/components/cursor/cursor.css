@@ -1,0 +1,38 @@
+.active-cursor {
+  opacity: 1;
+}
+
+.hidden-cursor {
+  opacity: 0;
+}
+
+#cursor :not(.box-cursor) {
+  width: 30px;
+  height: 30px;
+}
+
+.box-cursor {
+  border-radius: 5px;
+  background-color: transparent;
+  border: solid 2px rgba(89, 89, 89, 0.382);
+}
+
+.round-cursor {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: rgba(41, 37, 37, 0.382);
+  border: solid 2px rgba(164, 164, 164, 0.421);
+}
+
+#cursor {
+  position: absolute;
+  transform: translate(-50%, -50%);
+
+  z-index: 100;
+
+  pointer-events: none;
+
+  transition: all 0.3s ease;
+  transition-property: opacity, height, width, scale;
+}

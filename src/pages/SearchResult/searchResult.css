@@ -1,0 +1,15 @@
+.search-result {
+  width: 100vw;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-result img {
+  height: 50vh;
+}
+.search-result > h1 {
+  font-size: 3rem;
+}
